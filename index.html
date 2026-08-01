@@ -1,14 +1,25 @@
-<model-viewer
-  src="Galvez.glb" 
-  alt="3D model of Bernardo de Gálvez"
-  ar
-  ar-modes="webxr scene-viewer quick-look"
-  camera-controls
-  auto-rotate
-  shadow-intensity="1">
-  
-  <button slot="ar-button" class="ar-button">
-    📷 View Bernardo in AR
-  </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bernardo de Gálvez AR</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  <style>
+    body { margin: 0; background: #222; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    model-viewer { width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
 
-</model-viewer>
+  <model-viewer 
+    src="Galvez.glb" 
+    alt="Bernardo de Galvez" 
+    ar 
+    ar-modes="webxr scene-viewer quick-look" 
+    camera-controls 
+    auto-rotate>
+  </model-viewer>
+
+</body>
+</html>
