@@ -1,0 +1,93 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bernardo de Gálvez AR Experience</title>
+  
+  <!-- Load the Google <model-viewer> script -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      color: #1a202c;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #4a5568;
+    }
+
+    /* Container styling for the 3D viewer */
+    model-viewer {
+      width: 90vw;
+      max-width: 800px;
+      height: 70vh;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    /* Custom AR Button */
+    .ar-button {
+      background-color: #2b6cb0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .ar-button:hover {
+      background-color: #2c5282;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bernardo de Gálvez</h1>
+  <p>Rotate and inspect the 3D model or tap the AR button to view in your room.</p>
+
+  <!-- 3D Model & AR Viewer Tag -->
+  <model-viewer
+    src="bernardo_de_galvez.glb" 
+    ios-src="bernardo_de_galvez.usdz" 
+    alt="3D model of Bernardo de Gálvez"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1">
+    
+    <!-- Custom AR trigger button displayed on mobile screens -->
+    <button slot="ar-button" class="ar-button">
+      📷 View Bernardo in AR
+    </button>
+
+  </model-viewer>
+
+</body>
+</html>
